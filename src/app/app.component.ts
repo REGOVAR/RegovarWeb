@@ -9,8 +9,7 @@ import { AuthenticationService } from './core/services/authentication.service';
 export class AppComponent implements OnInit{
   title = 'Regovar';
 
-  constructor(private service: AuthenticationService)
-  { }
+  constructor(private service: AuthenticationService)  { }
 
   ngOnInit()
   {

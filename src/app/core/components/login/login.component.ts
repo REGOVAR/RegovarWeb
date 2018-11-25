@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   ) {
       // redirect to home if already logged in
       if (this.authenticationService.currentUser) { 
-          this.router.navigate(['/']);
+        this.router.navigate(['/']);
       }
   }
 
@@ -53,15 +53,15 @@ export class LoginComponent implements OnInit {
 
       this.loading = true;
       this.authenticationService.do();
-      // this.authenticationService.login(this.f.username.value, this.f.password.value)
-      //     .pipe(first())
-      //     .subscribe(
-      //         data => {
-      //             this.router.navigate([this.returnUrl]);
-      //         },
-      //         error => {
-      //             console.log(error); //this.alertService.error(error);
-      //             this.loading = false;
-      //         });
+      this.authenticationService.login(this.f.username.value, this.f.password.value)
+          .pipe(first())
+          .subscribe(
+              data => {
+                  this.router.navigate([this.returnUrl]);
+              },
+              error => {
+                  console.log(error); //this.alertService.error(error);
+                  this.loading = false;
+              });
   }
 }
