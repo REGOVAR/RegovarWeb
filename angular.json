@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "RegovarWeb": {
+    "Regovar": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/RegovarWeb",
+            "outputPath": "dist/Regovar",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -43,25 +43,32 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "RegovarWeb:build"
+            "browserTarget": "Regovar:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "RegovarWeb:build:production"
+              "browserTarget": "Regovar:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "RegovarWeb:build"
+            "browserTarget": "Regovar:build"
           }
         },
         "test": {
@@ -95,19 +102,20 @@
         }
       }
     },
-    "RegovarWeb-e2e": {
+    "Regovar-e2e": {
       "root": "e2e/",
       "projectType": "application",
+      "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "RegovarWeb:serve"
+            "devServerTarget": "Regovar:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "RegovarWeb:serve:production"
+              "devServerTarget": "Regovar:serve:production"
             }
           }
         },
@@ -123,5 +131,5 @@
       }
     }
   },
-  "defaultProject": "RegovarWeb"
+  "defaultProject": "Regovar"
 }

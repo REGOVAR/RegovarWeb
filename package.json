@@ -1,5 +1,5 @@
 {
-  "name": "regovar-web",
+  "name": "regovar",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,20 +7,19 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "cypress:open": "cypress open"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^7.0.4",
-    "@angular/common": "^7.0.4",
-    "@angular/compiler": "^7.0.4",
-    "@angular/core": "^7.0.4",
-    "@angular/forms": "^7.0.4",
-    "@angular/http": "^7.0.4",
-    "@angular/platform-browser": "^7.0.4",
-    "@angular/platform-browser-dynamic": "^7.0.4",
-    "@angular/router": "^7.0.4",
+    "@angular/animations": "~7.0.0",
+    "@angular/common": "~7.0.0",
+    "@angular/compiler": "~7.0.0",
+    "@angular/core": "~7.0.0",
+    "@angular/forms": "~7.0.0",
+    "@angular/http": "~7.0.0",
+    "@angular/platform-browser": "~7.0.0",
+    "@angular/platform-browser-dynamic": "~7.0.0",
+    "@angular/router": "~7.0.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
@@ -28,13 +27,12 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",
     "@angular/cli": "~7.0.6",
-    "@angular/compiler-cli": "^7.0.4",
-    "@angular/language-service": "^7.0.4",
+    "@angular/compiler-cli": "~7.0.0",
+    "@angular/language-service": "~7.0.0",
+    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "~8.9.4",
-    "codelyzer": "~4.3.0",
-    "cypress": "^3.1.1",
+    "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",
@@ -46,17 +44,5 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.1.6"
-  },
-  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/REGOVAR/RegovarWeb.git"
-  },
-  "author": "Regovar Team",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/REGOVAR/RegovarWeb/issues"
-  },
-  "homepage": "https://regovar.org"
+  }
 }
