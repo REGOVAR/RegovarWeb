@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthenticationService } from './services/authentication.service';
 import { AlertComponent } from './components/alert/alert.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [AlertComponent],
+  declarations: [AlertComponent, LoginComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule, 
+    ReactiveFormsModule
+  ],
+  exports: [
+    AlertComponent,
+    LoginComponent
   ]
 })
 export class CoreModule { }
