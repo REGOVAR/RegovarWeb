@@ -4,13 +4,14 @@ import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CurrentUser } from '../models/current-user';
+import { environment } from '../../../environments/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private authUrl = 'http://dev.regovar.org/user/login';
+  private authUrl = `${environment.apiProtocol}://${environment.apiPrefix}/user/login`; 
   private sessionTokenName = 'currentUser';
 
   public redirectUrl: string;
@@ -26,8 +27,6 @@ export class AuthenticationService {
         token: currentUser.token
       });
     }
-
-
   }
 
 
@@ -38,11 +37,12 @@ export class AuthenticationService {
 
 
   login(login: string, password: string): Observable<boolean> {
+    console.log(`Try login ${login} + ${password}`);
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     const options = { headers };
 
-    return this.http.post(this.authUrl, { "login": login, "password": password }, options).pipe(
+    return this.http.post(this.authUrl, { "login": login, "password": password }).pipe(
       map(response => {
         console.log(response);
         const token = response && response['token'];
@@ -58,6 +58,7 @@ export class AuthenticationService {
 
           return true;
         } else {
+          console.log(response);
           return false;
         }
       })
@@ -78,10 +79,15 @@ export class AuthenticationService {
   }
 
   getAuthorizationHeader(): string {
-    return `Bearer ${this.currentUser.token}`;
+    if (this.currentUser)
+      return `Authorization Header ${this.currentUser.token}`;
+    
+      return 'No Authorization Header (current user null)';
   }
 
   getToken(): string {
-    return this.currentUser.token;
+    if (this.currentUser)
+      return this.currentUser.token;
+    return '';
   }
 }

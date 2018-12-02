@@ -3,6 +3,5 @@ export const environment = {
   fake: false,
   apiProtocol: 'https',
   apiPrefix: '',
-  socketProtocol: 'wss',
-  socketPrefix: '/ws'
+  socketProtocol: 'wss'
 };

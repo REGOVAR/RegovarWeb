@@ -3,9 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  fake: false,
-  apiProtocol: 'http',
-  apiPrefix: 'dev.regovar.org',
-  socketProtocol: 'wss'
-};
+    production: false,
+    fake: true,
+    apiProtocol: 'https',
+    apiPrefix: '',
+    socketProtocol: 'wss'
+  };
+  

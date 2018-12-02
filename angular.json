@@ -51,6 +51,19 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "fake": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.fake.ts"
+                }
+              ],
+              "optimization": true,
+              "buildOptimizer": true,
+              "sourceMap": false,
+              "aot": true,
+              "serviceWorker": true
             }
           }
         },
@@ -62,6 +75,9 @@
           "configurations": {
             "production": {
               "browserTarget": "Regovar:build:production"
+            },
+            "fake": {
+              "browserTarget": "Regovar:build:fake"
             }
           }
         },
